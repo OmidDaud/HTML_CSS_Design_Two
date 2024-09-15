@@ -23,18 +23,43 @@
       <div class="container">
         <img src="images/logo.png" alt="Logo" class="logo" />
         <nav>
-          <input type="checkbox" id="menu-toggle" />
-          <label for="menu-toggle" class="toggle-menu">
-            <i class="fas fa-bars"></i>
-          </label>
-          <!-- <i class="fas fa-bars toggle-menu"></i> -->
-          <ul>
-            <li><a class="active" href="#home">Startseite</a></li>
-            <li><a href="#services">Dienstleistungen</a></li>
-            <li><a href="#portofolio">Portofolio</a></li>
-            <li><a href="#about">Über uns</a></li>
-            <li><a href="#pricing">Preise</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+          <i class="fas fa-bars toggle-menu"></i>
+          <ul class="menu">
+            <li>
+              <a
+                class="active"
+                href="#home"
+                onclick="scrollToSection(event, 'home')"
+                >Startseite</a
+              >
+            </li>
+            <li>
+              <a href="#services" onclick="scrollToSection(event, 'services')"
+                >Dienstleistungen</a
+              >
+            </li>
+            <li>
+              <a
+                href="#portofolio"
+                onclick="scrollToSection(event, 'portofolio')"
+                >Portofolio</a
+              >
+            </li>
+            <li>
+              <a href="#about" onclick="scrollToSection(event, 'about')"
+                >Über uns</a
+              >
+            </li>
+            <li>
+              <a href="#pricing" onclick="scrollToSection(event, 'pricing')"
+                >Preise</a
+              >
+            </li>
+            <li>
+              <a href="#contact" onclick="scrollToSection(event, 'contact')"
+                >Kontakt</a
+              >
+            </li>
           </ul>
           <div class="form">
             <i class="fas fa-search"></i>
@@ -523,5 +548,6 @@
         </p>
       </div>
     </div>
+    <script src="js/main.js"></script>
   </body>
 </html>
