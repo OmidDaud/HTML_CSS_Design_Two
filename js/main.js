@@ -10,9 +10,20 @@ function scrollToSection(event, sectionId) {
   if (section) {
     // Smoothly scrolls to the found section
     section.scrollIntoView({ behavior: "smooth" });
+
+    // Close the menu after scrolling
+    closeMenu();
   } else {
     // Logs an error message in the console if the section is not found
     console.error("Section with ID " + sectionId + " not found.");
+  }
+}
+
+// Function to close the menu
+function closeMenu() {
+  const menu = document.querySelector(".menu");
+  if (menu.classList.contains("activated")) {
+    menu.classList.remove("activated"); // Removes the 'activated' class to close the menu
   }
 }
 
@@ -20,11 +31,19 @@ function scrollToSection(event, sectionId) {
 document.addEventListener("DOMContentLoaded", function () {
   // Selects the toggle menu and the menu itself from the DOM
   const toggleMenu = document.querySelector(".toggle-menu");
-  const menu = document.querySelector(".menu");
 
   // Adds a click event listener to the toggle menu
   toggleMenu.addEventListener("click", function () {
-    // Toggles the "activated" class of the menu (adds or removes it)
-    menu.classList.toggle("activated");
+    const menu = document.querySelector(".menu");
+    menu.classList.toggle("activated"); // Toggles the "activated" class of the menu
+  });
+
+  // Selects all section links and adds an event listener for scrolling
+  const sectionLinks = document.querySelectorAll('a[href^="#"]');
+  sectionLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      const sectionId = this.getAttribute("href").substring(1); // Get the section ID from the href attribute
+      scrollToSection(event, sectionId); // Call the scrollToSection function
+    });
   });
 });
