@@ -163,7 +163,7 @@ ul {
     display: none;
     background-color: rgb(0 0 0 / 70%);
   }
-  .activated {
+  .activ-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
