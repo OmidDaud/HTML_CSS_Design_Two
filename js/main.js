@@ -22,8 +22,8 @@ function scrollToSection(event, sectionId) {
 // Function to close the menu
 function closeMenu() {
   const menu = document.querySelector(".menu");
-  if (menu.classList.contains(".activ-menu")) {
-    menu.classList.remove("activ-menu"); // Removes the 'activated' class to close the menu
+  if (menu.classList.contains("active-menu")) {
+    menu.classList.remove("active-menu"); // Removes the 'activated' class to close the menu
   }
 }
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Adds a click event listener to the toggle menu
   toggleMenu.addEventListener("click", function () {
     const menu = document.querySelector(".menu");
-    menu.classList.toggle("activ-menu"); // Toggles the "activated" class of the menu
+    menu.classList.toggle("active-menu"); // Toggles the "activated" class of the menu
   });
 
   // Selects all section links and adds an event listener for scrolling

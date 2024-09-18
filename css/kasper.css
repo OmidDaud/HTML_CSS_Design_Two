@@ -157,13 +157,21 @@ ul {
 .header nav ul {
   display: flex;
 }
-
+.active-menu {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgb(0 0 0 / 50%);
+}
 @media (max-width: 767px) {
   .header nav ul {
     display: none;
     background-color: rgb(0 0 0 / 70%);
   }
-  .activ-menu {
+  /* .active-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -172,8 +180,16 @@ ul {
     width: 100%;
     background-color: rgb(0, 0, 0 / 50%);
     z-index: 5;
+  } */
+  header nav .toggle-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0 0 0 / 50%);
   }
-
   .header nav ul li a {
     padding: 15px !important;
   }
